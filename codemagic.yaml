@@ -1,34 +1,14 @@
-version: 2.0
 workflows:
-  ios-workflow:
-    name: iOS Workflow
-    environment:
-      flutter: stable
-    triggers:
-      on_push:
-        branches:
-          only:
-            - main
-    scripts:
-      - name: Build iOS app
-        script: |
-          flutter build ios
-      - name: Test iOS app
-        script: |
-          flutter test
-  android-workflow:
-    name: Android Workflow
-    environment:
-      flutter: stable
-    triggers:
-      on_push:
-        branches:
-          only:
-            - main
-    scripts:
-      - name: Build Android app
-        script: |
-          flutter build apk
-      - name: Test Android app
-        script: |
-          flutter test
+  sample-workflow:
+    name: Codemagic Sample Workflow
+    max_build_duration: 120
+    instance_type: mac_mini_m2
+workflows:
+    android-workflow-id:
+        name: Android Sample Workflow
+        # .......    
+        # .......
+        # .......  
+    ios-workflow-id:
+        name: iOS Sample Workflow
+        # ......
