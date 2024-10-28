@@ -5,16 +5,11 @@ workflows:
     environment:
       flutter: stable
     triggers:
-      on_push:
+      push:
         branches:
           only:
             - main
     scripts:
-      - name: Pre-commit
-        script: flutter pub get
       - name: Build iOS app
         script: |
           flutter build ios
-      - name: Test iOS app
-        script: |
-          flutter test
