@@ -1,0 +1,21 @@
+version: 2.0
+scripts:
+  pre-commit:
+    - flutter pub get
+workflows:
+  ios-workflow:
+    name: iOS Workflow
+    environment:
+      flutter: stable
+    triggers:
+      push:
+        branches:
+          only:
+            - main
+    scripts:
+      - name: Build iOS app
+        script: |
+          flutter build ios
+      - name: Test iOS app
+        script: |
+          flutter test
