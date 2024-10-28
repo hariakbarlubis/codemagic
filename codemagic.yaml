@@ -1,7 +1,4 @@
 version: 2.0
-scripts:
-  pre-commit:
-    - flutter pub get
 workflows:
   ios-workflow:
     name: iOS Workflow
@@ -13,6 +10,8 @@ workflows:
           only:
             - main
     scripts:
+      pre-commit:
+        - flutter pub get
       - name: Build iOS app
         script: |
           flutter build ios
